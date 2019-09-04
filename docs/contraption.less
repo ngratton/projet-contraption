@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Black+Ops+One|Iceberg|Megrim|Wallpoet&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Arapey:400,400i&display=swap');
+
+html {
+    height: 100%;
+    font-family: 'Arapey', serif;
+    font-size: 13pt;
+}
+body {
+    height: 100%;
+    margin: 0;
+}
+div.interface {
+    min-height: 100%;
+}
+.module {
+    display: flex;
+    flex-direction: column;
+    & > * {
+        flex: 1 0 auto;
+    }
+    & > header {
+        flex: 0 0 auto;
+        order: -100;
+    }
+    & > footer {
+        flex: 0 0 auto;
+        order: 100;
+    }
+    & > nav {
+        flex: 0 0 auto;
+        order: -100;
+    }
+}
+ul {
+    margin: 0;
+    padding-left: 1em;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 0;
+    font-family: 'Wallpoet', cursive;
+    font-family: 'Black Ops One', cursive;
+    font-family: 'Iceberg', cursive;
+    font-family: 'Megrim', cursive;
+    font-family: 'Audiowide', cursive;
+}
+header {
+    h1,h2,h3,h4,h5,h6 {
+        margin: 0;
+    }
+}
+div.interface {
+    width: 8.5in;
+    margin: 1em auto;
+}
+div.page {
+    .module;
+    width: 8.5in;
+    height: 11in;
+    padding: .5in 1in;
+    box-sizing: border-box;
+    & > header {
+        font-size: 1.4em;
+    }
+}
+@page {
+    size: 8.5in 11in;
+    margin: 0;
+}
+@media screen {
+    body {
+        background-color: #000;
+        color: white;
+    }
+    .page {
+        background-color: white;
+        color: black;
+    }
+}
+@media print {
+    body {
+        & > *:not(.interface) {
+            display: none;
+            & > *:not(.page) {
+                display: none;
+            }
+        }
+    }
+}

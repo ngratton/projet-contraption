@@ -1,13 +1,9 @@
 # application-base
-Application de base pour débuter un projet
-
+Contraption
 ## Description
-Description à venir
+Une animation-hommage à _Rube Goldberg_ basée sur _The Incredible Machine_
 
 ## Particularités
 
-- Compléter
-
-## Variantes et ajouts possibles
-
-- Compléter
+- Utiliser la fonctionnalité fork de Github
+- Le devis se trouve dans le dossier `docs`
