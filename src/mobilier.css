@@ -1,0 +1,5 @@
+.mobilier {
+    background-image: url(../img/wood.png);
+    /* background-repeat: no-repeat; */
+    position: absolute;
+}
