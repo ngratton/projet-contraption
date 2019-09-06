@@ -1,3 +1,16 @@
 .controles {
-    
+    width: 28px;
+    height: 35px;
+    background-image: url("../img/play.png");
+    background-repeat: no-repeat;
+    background-position-x: 0px;
+    position: absolute;
+}
+
+.controles:active {
+    width: 28px;
+    height: 35px;
+    background-image: url("../img/play.png");
+    background-repeat: no-repeat;
+    background-position-x: -28px;
 }

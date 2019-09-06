@@ -1,21 +1,22 @@
 .seesaw {
-	width: 80px;
+	width: 82px;
 	height: 36px;
 	background-image: url(../img/seesaw.png);
 	background-repeat: no-repeat;
 	position: absolute;
 	/* animation-name: ouiii; */
-	animation-duration: 700ms;
+	animation-duration: 250ms;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
+	animation-timing-function: linear;
+	animation-timing-function: steps(3);
 	transform: scaleX(-1);
 }
 
 @keyframes ouiii {
 	0% {
-		transform: scaleX(-1);;
+		background-position-x: 0px;
 	}
 	100% {
-		transform: scaleX(1);;
+		background-position-x: -246px;
 	}
 }

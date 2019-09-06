@@ -1,4 +1,7 @@
 /*jslint esnext:true, browser:true*/
+
+import Chat from "./Chat.js";
+
 /**
  * @module Controles
  */
@@ -13,8 +16,14 @@ export default class Controles {
     static main() {
         this.app = document.querySelector("#app");
         this.ajouterStyle();
-        var ballon = new Controles(630, 273);
-        this.app.appendChild(ballon.creerDiv());
+        var controles = new Controles(15, 58);
+        var play = this.app.appendChild(controles.creerDiv());
+        // console.log(controles.creerDiv());
+		play.addEventListener("click", oneTimeStart);
+		function oneTimeStart() {
+			Chat.startAnimation();
+			play.removeEventListener("click", oneTimeStart);
+		}
     }
     
     static ajouterStyle() {
@@ -33,5 +42,7 @@ export default class Controles {
         resultat.obj = this;
         return resultat;
     }
+
+    
         
 }

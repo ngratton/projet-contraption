@@ -1,4 +1,7 @@
 /*jslint esnext:true, browser:true*/
+
+import Seesaw from "./Seesaw.js";
+
 /**
  * @module Quille
  */
@@ -20,7 +23,8 @@ export default class Quille {
     static startAnimation() {
         this.quille.deplacerX(360);
         this.quille.div.addEventListener("transitionend", (e) => {
-            e.currentTarget.obj.deplacerY(400);                
+            e.currentTarget.obj.deplacerY(400);  
+            Seesaw.startAnimation();              
         });
     }
     
@@ -45,7 +49,7 @@ export default class Quille {
         this.x = x;
         window.setTimeout(() => {
             this.div.style.transitionDuration = 250 + "ms";
-            this.div.style.transitionTimingFunction = "ease-in";
+            this.div.style.transitionTimingFunction = "cubic-bezier(1,.24,.99,.85)";
             this.div.style.left = this.x + "px";
         }, 50);      
     }

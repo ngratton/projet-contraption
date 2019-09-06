@@ -19,10 +19,10 @@ export default class Seesaw {
 
     static startAnimation() {
         setTimeout(() => {
-            this.div.style.transitionDuration = (1000 + (Math.floor(Math.random() * 4000))) + "ms";
+            // this.div.style.transitionDuration = (1000 + (Math.floor(Math.random() * 4000))) + "ms";
             this.div.style.transitionTimingFunction = "linear";
             this.div.style.animationName = "ouiii";
-            this.div.style.animationDuration = 500 + "ms";
+            this.div.style.animationDuration = 250 + "ms";
             this.div.style.left = this.x + "px";
             this.div.style.top = this.y + "px";
         }, 10);

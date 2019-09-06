@@ -4,7 +4,7 @@
 	background-image: url(../img/ballon.png);
 	background-repeat: no-repeat;
 	position: absolute;
-	animation-name: pouf;
+	/* animation-name: pouf; */
 	animation-duration: 700ms;
     animation-iteration-count: 1;
     animation-timing-function: linear;
