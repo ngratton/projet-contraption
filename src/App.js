@@ -23,6 +23,17 @@ export default class App {
 		Bellows.main();
 		Seesaw.main();
 		Ballon.main();
+
+		// var app = document.querySelector("#app");
+		// var button = document.createElement("button");
+		// button.innerHTML = "Go!";
+		// app.appendChild(button);
+		// button.addEventListener("click", oneTimeStart);
+
+		// function oneTimeStart() {
+		// 	Chat.startAnimation();
+		// 	button.removeEventListener("click", oneTimeStart);
+		// }
 	}
 	/**
 	 * Méthode qui permet d'attendre le chargement de la page avant d'éxécuter le script principal

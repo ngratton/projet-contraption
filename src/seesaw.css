@@ -5,8 +5,8 @@
 	background-repeat: no-repeat;
 	position: absolute;
 	/* animation-name: ouiii; */
-	animation-duration: 250ms;
-    animation-iteration-count: infinite;
+	animation-duration: 150ms;
+    animation-iteration-count: 1;
 	animation-timing-function: linear;
 	animation-timing-function: steps(3);
 	transform: scaleX(-1);

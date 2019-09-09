@@ -24,7 +24,9 @@ export default class Quille {
         this.quille.deplacerX(360);
         this.quille.div.addEventListener("transitionend", (e) => {
             e.currentTarget.obj.deplacerY(400);  
-            Seesaw.startAnimation();              
+            this.quille.div.addEventListener("transitionend", (e) => {
+                Seesaw.startAnimation();
+            });            
         });
     }
     
