@@ -1,11 +1,8 @@
 /*jslint esnext:true, browser:true*/
-
-import Chat from "./Chat.js";
-
 /**
- * @module Controles
+ * @module Drop
  */
-export default class Controles {
+export default class Drop {
     constructor(x, y) {
         this.x = x;
         this.y = y;
@@ -16,33 +13,25 @@ export default class Controles {
     static main() {
         this.app = document.querySelector("#app");
         this.ajouterStyle();
-        var controles = new Controles(25, 120);
-        var play = this.app.appendChild(controles.creerDiv());
-        // console.log(controles.creerDiv());
-		play.addEventListener("click", oneTimeStart);
-		function oneTimeStart() {
-			Chat.startAnimation();
-			play.removeEventListener("click", oneTimeStart);
-		}
+        var drop = new Drop(197, 397);
+        this.app.appendChild(drop.creerDiv());
     }
     
     static ajouterStyle() {
         var resultat = document.createElement("link");
         resultat.setAttribute("rel", "stylesheet");
-        resultat.setAttribute("href", "./src/controles.css");
+        resultat.setAttribute("href", "./src/drop.css");
         document.head.appendChild(resultat);
     }
 
     creerDiv() {        
         var resultat = document.createElement("div");
-        resultat.classList.add("controles");
+        resultat.classList.add("drop");
         resultat.style.left = this.x + "px";
         resultat.style.top = this.y + "px";
         this.div = resultat;
         resultat.obj = this;
         return resultat;
     }
-
-    
         
 }

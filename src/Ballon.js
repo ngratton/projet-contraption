@@ -13,7 +13,7 @@ export default class Ballon {
     static main() {
         this.app = document.querySelector("#app");
         this.ajouterStyle();
-        var ballon = new Ballon(630, 273);
+        var ballon = new Ballon(385, 180);
         this.app.appendChild(ballon.creerDiv());
     }
     

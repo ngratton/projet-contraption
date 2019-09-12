@@ -4,9 +4,12 @@ import Controles from "./Controles.js";
 import Mobilier from "./Mobilier.js";
 import Chat from "./Chat.js";
 import Quille from "./Quille.js";
-import Bellows from "./Bellows.js";
+// import Bellows from "./Bellows.js";
 import Seesaw from "./Seesaw.js";
 import Ballon from "./Ballon.js";
+import Clou from "./Clou.js";
+import Pipes from "./Pipes.js";
+import Bucket from "./Bucket.js";
 
 /**
  * @module App
@@ -20,19 +23,22 @@ export default class App {
 		Mobilier.main();
 		Chat.main();
 		Quille.main();
-		Bellows.main();
+		// Bellows.main();
+		Clou.main(); 
 		Seesaw.main();
 		Ballon.main();
+		Pipes.main();
+		Bucket.main();
 		
 		var app = document.querySelector("#app");
 		
-		var random = Math.floor(Math.random() * 6000);
-		// console.log(random);
-		setInterval( () => {
-			app.innerHTML = random;
-			random = Math.floor(Math.random() * 6000);
-			console.log(random);
-		}, random);
+		// var random = Math.floor(Math.random() * 6000);
+		// // console.log(random);
+		// setInterval( () => {
+		// 	app.innerHTML = random;
+		// 	random = Math.floor(Math.random() * 6000);
+		// 	console.log(random);
+		// }, random);
 		
 		
 		// var button = document.createElement("button");

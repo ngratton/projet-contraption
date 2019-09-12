@@ -20,18 +20,20 @@ export default class Seesaw {
     static startAnimation() {
         setTimeout(() => {
             // this.seesaw1.style.transitionDuration = (1000 + (Math.floor(Math.random() * 4000))) + "ms";
-            this.seesaw1.style.transitionTimingFunction = "linear";
-            this.seesaw1.style.animationName = "ouiii";
-            this.seesaw1.style.animationDuration = 250 + "ms";
-            this.seesaw1.style.left = this.x + "px";
-            this.seesaw1.style.top = this.y + "px";
+            this.seesaw1.style.animationPlayState = "running";
+            // this.seesaw1.style.transitionTimingFunction = "linear";
+            // this.seesaw1.style.animationName = "ouiii";
+            // this.seesaw1.style.animationDuration = 250 + "ms";
+            // this.seesaw1.style.left = this.x + "px";
+            // this.seesaw1.style.top = this.y + "px";
         }, 10);
         var stop = (e) => {
-            this.seesaw1.style.removeProperty("transition-duration");
-            this.seesaw1.style.removeProperty("transition-timing-function");
-            this.seesaw1.style.removeProperty("animation-name");
-            this.seesaw1.style.removeProperty("animation-duration");
-            this.seesaw1.style.removeProperty("transform");
+            this.seesaw1.style.removeProperty("running");
+            // this.seesaw1.style.removeProperty("transition-duration");
+            // this.seesaw1.style.removeProperty("transition-timing-function");
+            // this.seesaw1.style.removeProperty("animation-name");
+            // this.seesaw1.style.removeProperty("animation-duration");
+            // this.seesaw1.style.removeProperty("transform");
             this.seesaw1.removeEventListener("transitionend", stop);
         }
         this.seesaw1.addEventListener("transitionend", stop);

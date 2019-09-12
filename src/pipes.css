@@ -1,0 +1,12 @@
+.pipes {
+    /* background-color: red; */
+    width: 32px;
+	height: 32px;
+	/* border: 1px dashed red; */
+    background-image: url(../img/sprites.png);
+    background-position-x: -166px;
+    background-position-y: -561px;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 25%;
+}

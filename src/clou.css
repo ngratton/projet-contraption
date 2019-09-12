@@ -1,0 +1,11 @@
+.clou {
+    /* background-color: red; */
+	width: 15px;
+	height: 19px;
+	/* border: 1px dashed red; */
+	background-image: url(../img/nail.png);
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 25%;
+	transform: scaleY(-1);
+}

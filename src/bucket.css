@@ -1,0 +1,12 @@
+.bucket {
+    /* background-color: red; */
+	width: 38px;
+	height: 48px;
+	/* border: 1px dashed red; */
+    background-image: url(../img/sprites.png);
+    background-position-x: -7px;
+    background-position-y: -437px;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 25%;
+}

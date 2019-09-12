@@ -17,8 +17,10 @@ export default class Mobilier {
         this.ajouterStyle();
         var mobilier = new Mobilier(100, 157, 256, 32);
         this.app.appendChild(mobilier.creerDiv());
-        var mobilier2 = new Mobilier(600, 250, 128, 32);
+        var mobilier2 = new Mobilier(400, 157, 128, 32);
         this.app.appendChild(mobilier2.creerDiv());
+        var mobilier3 = new Mobilier(100, 443, 484, 32);
+        this.app.appendChild(mobilier3.creerDiv());
     }
     
     static ajouterStyle() {
