@@ -27,7 +27,7 @@ export default class Quille {
             this.quille.div.addEventListener("transitionend", (e) => {
                 Seesaw.startAnimation();
             });            
-        });
+        });      
     }
     
     static ajouterStyle() {

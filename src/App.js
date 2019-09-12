@@ -23,13 +23,22 @@ export default class App {
 		Bellows.main();
 		Seesaw.main();
 		Ballon.main();
-
-		// var app = document.querySelector("#app");
+		
+		var app = document.querySelector("#app");
+		
+		var random = Math.floor(Math.random() * 6000);
+		// console.log(random);
+		setInterval( () => {
+			app.innerHTML = random;
+			random = Math.floor(Math.random() * 6000);
+			console.log(random);
+		}, random);
+		
+		
 		// var button = document.createElement("button");
-		// button.innerHTML = "Go!";
+		// button.innerHTML = random;
 		// app.appendChild(button);
 		// button.addEventListener("click", oneTimeStart);
-
 		// function oneTimeStart() {
 		// 	Chat.startAnimation();
 		// 	button.removeEventListener("click", oneTimeStart);
