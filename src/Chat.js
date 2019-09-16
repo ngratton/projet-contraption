@@ -60,7 +60,7 @@ export default class Chat {
         this.x = x;
         this.y = y;
         setTimeout(() => {
-            this.div.style.transitionDuration = (1000 + (Math.floor(Math.random() * 4000))) + "ms";
+            this.div.style.transitionDuration = 2000 + "ms";
             this.div.style.transitionTimingFunction = "linear";
             this.div.style.animationName = "walk";
             this.div.style.animationDuration = 500 + "ms";

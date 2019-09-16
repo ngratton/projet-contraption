@@ -10,6 +10,7 @@ import Ballon from "./Ballon.js";
 import Clou from "./Clou.js";
 import Pipes from "./Pipes.js";
 import Bucket from "./Bucket.js";
+import Drop from "./Drop.js";
 
 /**
  * @module App
@@ -29,6 +30,9 @@ export default class App {
 		Ballon.main();
 		Pipes.main();
 		Bucket.main();
+		Drop.main();
+
+		Drop.startAnimation();
 		
 		var app = document.querySelector("#app");
 		
