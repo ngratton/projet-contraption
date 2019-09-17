@@ -1,6 +1,7 @@
 /*jslint esnext:true, browser:true*/
 
 import Chat from "./Chat.js";
+import Clou from "./Clou.js";
 
 /**
  * @module Ballon
@@ -22,11 +23,16 @@ export default class Ballon {
 
     static startAnimation() {
         this.ballon.div.style.animationPlayState = "running";
-        this.app.style.backgroundColor = "green";
+        var r, g, b;
+            r = Math.floor(Math.random() * 255) + ",";
+            g = Math.floor(Math.random() * 255) + ",";
+            b = Math.floor(Math.random() * 255);
+        this.app.style.backgroundColor = "rgb(" + r+g+b + ")";
         Chat.startledCat();
         this.ballon.div.addEventListener("animationend", (e) => {
-            e.target.parentNode.removeChild(e.target);
-            this.app.style.backgroundColor = "white";     
+            e.currentTarget.parentNode.removeChild(e.currentTarget);
+            this.ballon.div.style.animationPlayState = "paused";
+            this.app.style.backgroundColor = "rgb(255,255,255)";     
         });  
     }
     

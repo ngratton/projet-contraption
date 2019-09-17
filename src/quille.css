@@ -1,17 +1,15 @@
 .quille {
-    /* background-color: red; */
-	width: 34px;
+	width: 36px;
 	height: 34px;
-	/* border: 1px dashed red; */
 	background-image: url(../img/bowlingball.png);
 	background-repeat: no-repeat;
 	position: absolute;
 	top: 25%;
-	/* animation-name: roll; */
+	animation-name: roll;
 	animation-duration: 700ms;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
-	/* animation: walk 600ms infinite steps(8); */
+	animation-timing-function: linear;
+	animation-play-state: paused;
 	transform: scaleX(-1);
 }
 

@@ -35,6 +35,12 @@ export default class Drop {
             delete this.drop;
         });
     }
+    
+    static aleaDrop() {
+        window.setTimeout(() => {
+            this.startAnimation();
+        }, Math.floor(Math.random() * (2000-900) + 900))
+    }
 
     static ajouterStyle() {
         var resultat = document.createElement("link");
@@ -43,11 +49,6 @@ export default class Drop {
         document.head.appendChild(resultat);
     }
     
-    static aleaDrop() {
-        window.setTimeout(() => {
-            this.startAnimation();
-        }, Math.floor(Math.random() * (2000-900) + 900))
-    }
 
     creerDiv() {        
         var resultat = document.createElement("div");

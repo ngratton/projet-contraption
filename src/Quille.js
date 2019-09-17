@@ -22,10 +22,12 @@ export default class Quille {
 
     static startAnimation() {
         this.quille.deplacerX(360);
+        this.quille.div.style.animationPlayState = "running";
         this.quille.div.addEventListener("transitionend", (e) => {
             e.currentTarget.obj.deplacerY(400);  
             this.quille.div.addEventListener("transitionend", (e) => {
                 Seesaw.startAnimation();
+                this.quille.div.style.animationPlayState = "paused";
             });            
         });      
     }
