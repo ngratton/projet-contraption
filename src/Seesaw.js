@@ -28,9 +28,9 @@ export default class Seesaw {
                 this.seesaw.div.style.transform = "scaleX(1)";
             });
             Clou.startAnimation();
-            window.setTimeout(() => {
-                console.log(this.seesaw.div);
-            }, 1000);
+            // window.setTimeout(() => {
+            //     console.log(this.seesaw.div);
+            // }, 1000);
     }
     
     static ajouterStyle() {
