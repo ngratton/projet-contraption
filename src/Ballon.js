@@ -1,4 +1,7 @@
 /*jslint esnext:true, browser:true*/
+
+import Chat from "./Chat.js";
+
 /**
  * @module Ballon
  */
@@ -13,8 +16,18 @@ export default class Ballon {
     static main() {
         this.app = document.querySelector("#app");
         this.ajouterStyle();
-        var ballon = new Ballon(385, 180);
-        this.app.appendChild(ballon.creerDiv());
+        this.ballon = new Ballon(385, 180);
+        this.app.appendChild(this.ballon.creerDiv());
+    }
+
+    static startAnimation() {
+        this.ballon.div.style.animationPlayState = "running";
+        this.app.style.backgroundColor = "green";
+        Chat.startledCat();
+        this.ballon.div.addEventListener("animationend", (e) => {
+            e.target.parentNode.removeChild(e.target);
+            this.app.style.backgroundColor = "white";     
+        });  
     }
     
     static ajouterStyle() {

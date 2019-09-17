@@ -11,23 +11,42 @@ export default class Drop {
      * Méthode principale. Sera typiquement appelée après le chargement de la page.
 	 */
     static main() {
+    }
+
+    static creerDrop() {
         this.app = document.querySelector("#app");
         this.ajouterStyle();
         this.drop = new Drop(203, 215);
         this.app.appendChild(this.drop.creerDiv());
-
-        this.random = Math.floor(Math.random() * 2000);
     }
 
     static startAnimation() {
-        this.drop.deplacerY(416);
+        this.creerDrop();
+        window.setTimeout(() => {
+            this.drop.deplacerY(416);
+            this.aleaDrop();
+            this.killDrop();
+		}, 400);
     }
     
+    static killDrop() {
+        this.drop.div.addEventListener("transitionend", () => {
+            this.drop.div.parentNode.removeChild(this.drop.div);
+            delete this.drop;
+        });
+    }
+
     static ajouterStyle() {
         var resultat = document.createElement("link");
         resultat.setAttribute("rel", "stylesheet");
         resultat.setAttribute("href", "./src/drop.css");
         document.head.appendChild(resultat);
+    }
+    
+    static aleaDrop() {
+        window.setTimeout(() => {
+            this.startAnimation();
+        }, Math.floor(Math.random() * (2000-900) + 900))
     }
 
     creerDiv() {        
@@ -44,11 +63,11 @@ export default class Drop {
     deplacerY(y) {
         this.y = y;
         window.setTimeout(() => {
-            console.log(this.div);
-            this.div.style.transitionDuration = 250 + "ms";
-            this.div.style.transitionTimingFunction = "cubic-bezier(0.5, 0.2, 0.3, 1.0)";
+            this.div.style.transitionDuration = 500 + "ms";
+            this.div.style.transitionTimingFunction = "ease-in";
             this.div.style.top = this.y + "px";
             this.random = Math.floor(Math.random() * 2000);
-        }, this.random);      
+        }, this.random);
     }       
+
 }

@@ -1,6 +1,7 @@
 /*jslint esnext:true, browser:true*/
 
 import Chat from "./Chat.js";
+import Drop from "./Drop.js";
 
 /**
  * @module Controles
@@ -21,7 +22,8 @@ export default class Controles {
         // console.log(controles.creerDiv());
 		play.addEventListener("click", oneTimeStart);
 		function oneTimeStart() {
-			Chat.startAnimation();
+            Chat.startAnimation();
+            Drop.startAnimation();
 			play.removeEventListener("click", oneTimeStart);
 		}
     }

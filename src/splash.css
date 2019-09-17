@@ -1,0 +1,44 @@
+#splash {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #splash figure {
+    margin: 0;
+    background-color: white;
+    border: solid;
+    position: relative;
+    left: 0;
+    background-image: url(../img/sprites.png);
+    background-position-x: -445px;
+    background-position-y: -1730px;
+    width: 397px;
+    height: 183px;
+  }
+
+  #splash h3 {
+    position: absolute;
+    top: -25px;
+    left: 20px;
+    color: rgb(21, 255, 0);
+    transform: rotate(-15deg);
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.7);
+  }
+
+  #splash figcaption {
+    position: absolute;
+    color: #fff;
+    font-weight: bold;
+    top: 200px;
+    /* left: 5px; */
+  }

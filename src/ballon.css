@@ -4,12 +4,12 @@
 	background-image: url(../img/ballon.png);
 	background-repeat: no-repeat;
 	position: absolute;
-	/* animation-name: pouf; */
-	animation-duration: 700ms;
+	animation-name: pouf;
+	animation-play-state: paused;
+	animation-duration: 200ms;
     animation-iteration-count: 1;
     animation-timing-function: linear;
     animation-timing-function: steps(7);
-	transform: scaleX(-1);
 }
 
 @keyframes pouf {

@@ -13,7 +13,7 @@ export default class Bucket {
     static main() {
         this.app = document.querySelector("#app");
         this.ajouterStyle();
-        var bucket = new Bucket(197, 397);
+        var bucket = new Bucket(192, 397);
         this.app.appendChild(bucket.creerDiv());
     }
     

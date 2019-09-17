@@ -18,20 +18,17 @@ export default class Chat {
         this.ajouterStyle();
         this.chat = new Chat(100, 100);
         this.app.appendChild(this.chat.creerDiv());
-        // this.chat.deplacer(273, 100);
-        // console.log(chat);
-        // this.chat.div.addEventListener("click", () => {
-        //     startAnimation();
-        // }, false);
     }
 
     static startAnimation() {
         this.chat.deplacer(273, 100);
-        // chat.div.addEventListener("transitionend", (e) => {
-        //     e.currentTarget.obj.deplacer(Math.floor(Math.random() * 90), Math.floor(Math.random() * 90));
-        // });
-        // var chat = new Chat(500, 250);
-        // this.app.appendChild(chat.creerDiv());
+    }
+
+    static startledCat() {
+        this.chat.div.classList.add("startled");
+        this.chat.div.addEventListener("animationend", (e) => {
+            this.chat.div.classList.remove("startled");
+        });
     }
 
     static ajouterStyle() {
@@ -53,10 +50,6 @@ export default class Chat {
 
 
     deplacer(x, y) {
-        // var distance = Math.sqrt((x - this.x)*(x - this.x) + (y - this.y)*(y - this.y));
-        // if (x > this.x) {
-        //     this.sprite.style.transform = "scale(-1,1)";
-        // }
         this.x = x;
         this.y = y;
         setTimeout(() => {

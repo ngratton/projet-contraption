@@ -1,4 +1,8 @@
 /*jslint esnext:true, browser:true*/
+
+
+import Clou from "./Clou.js";
+
 /**
  * @module Seesaw
  */
@@ -20,6 +24,7 @@ export default class Seesaw {
     static startAnimation() {
         setTimeout(() => {
             this.seesaw1.style.animationPlayState = "running";
+            Clou.startAnimation();
         }, 1);
         var stop = (e) => {
             this.seesaw1.style.removeProperty("running");

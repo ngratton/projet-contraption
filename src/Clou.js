@@ -1,6 +1,6 @@
 /*jslint esnext:true, browser:true*/
 
-import Seesaw from "./Seesaw.js";
+import Ballon from "./Ballon.js";
 
 /**
  * @module Clou
@@ -21,12 +21,10 @@ export default class Clou {
     }
 
     static startAnimation() {
-        this.clou.deplacerX(360);
+        this.clou.deplacerY(215);
         this.clou.div.addEventListener("transitionend", (e) => {
-            e.currentTarget.obj.deplacerY(400);  
-            this.clou.div.addEventListener("transitionend", (e) => {
-                Seesaw.startAnimation();
-            });            
+            Ballon.startAnimation();
+            e.target.parentNode.removeChild(e.target);          
         });      
     }
     
@@ -46,19 +44,11 @@ export default class Clou {
         resultat.obj = this;
         return resultat;
     }
-    
-    deplacerX(x) {
-        this.x = x;
-        window.setTimeout(() => {
-            this.div.style.transitionDuration = 250 + "ms";
-            this.div.style.transitionTimingFunction = "cubic-bezier(1,.24,.99,.85)";
-            this.div.style.left = this.x + "px";
-        }, 50);      
-    }
+
     deplacerY(y) {
         this.y = y;
         window.setTimeout(() => {
-            this.div.style.transitionDuration = 450 + "ms";
+            this.div.style.transitionDuration = 150 + "ms";
             this.div.style.transitionTimingFunction = "cubic-bezier(0.5, 0.2, 0.3, 1.0)";
             this.div.style.top = this.y + "px";
         }, 50);      

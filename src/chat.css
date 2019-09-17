@@ -25,3 +25,21 @@
 		transform: scaleX(-1);
     }
 }
+
+.chat.startled {    
+    background-position-x: -67px;
+    animation-name: startled;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-timing-function: steps(2);
+    transform: scaleX(-1);
+}
+
+@keyframes startled {
+    0% {
+        background-position-x: -67px;
+    }
+    100% {
+        background-position-x: -67px;
+    }
+}
