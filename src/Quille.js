@@ -50,16 +50,16 @@ export default class Quille {
     deplacerX(x) {
         this.x = x;
         window.setTimeout(() => {
-            this.div.style.transitionDuration = 250 + "ms";
-            this.div.style.transitionTimingFunction = "cubic-bezier(1,.24,.99,.85)";
+            this.div.style.transitionDuration = 200 + "ms";
+            this.div.style.transitionTimingFunction = "ease-in";
             this.div.style.left = this.x + "px";
         }, 50);      
     }
     deplacerY(y) {
         this.y = y;
         window.setTimeout(() => {
-            this.div.style.transitionDuration = 450 + "ms";
-            this.div.style.transitionTimingFunction = "cubic-bezier(0.5, 0.2, 0.3, 1.0)";
+            this.div.style.transitionDuration = 350 + "ms";
+            this.div.style.transitionTimingFunction = "ease-in";
             this.div.style.top = this.y + "px";
         }, 50);      
     }

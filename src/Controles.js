@@ -1,3 +1,6 @@
+/* Nicholas Gratton - 0270256 */
+
+
 /*jslint esnext:true, browser:true*/
 
 import Chat from "./Chat.js";
@@ -25,7 +28,13 @@ export default class Controles {
             Chat.startAnimation();
             Drop.startAnimation();
 			play.removeEventListener("click", oneTimeStart);
-		}
+        }
+        var instructions = document.createElement("p");
+        instructions.innerHTML = "Appuyez sur > pour démarrer l'animation.";
+        instructions.style.position = "absolute";
+        instructions.style.top = "50px";
+        instructions.style.left = "15px";
+        this.app.appendChild(instructions);
     }
     
     static ajouterStyle() {

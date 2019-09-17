@@ -17,21 +17,20 @@ export default class Seesaw {
     static main() {
         this.app = document.querySelector("#app");
         this.ajouterStyle();
-        var seesaw = new Seesaw(360, 408);
-        this.seesaw1 = this.app.appendChild(seesaw.creerDiv());
+        this.seesaw = new Seesaw(360, 408);
+        this.app.appendChild(this.seesaw.creerDiv());
     }
 
     static startAnimation() {
-        setTimeout(() => {
-            this.seesaw1.style.animationPlayState = "running";
+            this.seesaw.div.style.animationPlayState = "running";
+            this.seesaw.div.addEventListener("animationend", (e) => {
+                this.seesaw.div.style.removeProperty("animation-play-state");
+                this.seesaw.div.style.transform = "scaleX(1)";
+            });
             Clou.startAnimation();
-        }, 1);
-        var stop = (e) => {
-            this.seesaw1.style.removeProperty("running");
-            this.seesaw1.style.transform = "scaleX(-1)";
-            this.seesaw1.removeEventListener("transitionend", stop);
-        }
-        this.seesaw1.addEventListener("transitionend", stop);
+            window.setTimeout(() => {
+                console.log(this.seesaw.div);
+            }, 1000);
     }
     
     static ajouterStyle() {

@@ -1,10 +1,11 @@
+/* Nicholas Gratton - 0270256 */
+
 /*jslint esnext:true, browser:true*/
 
 import Controles from "./Controles.js";
 import Mobilier from "./Mobilier.js";
 import Chat from "./Chat.js";
 import Quille from "./Quille.js";
-// import Bellows from "./Bellows.js";
 import Seesaw from "./Seesaw.js";
 import Ballon from "./Ballon.js";
 import Clou from "./Clou.js";
