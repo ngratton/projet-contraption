@@ -16,7 +16,7 @@ export default class Drop {
     static creerDrop() {
         this.app = document.querySelector("#app");
         this.ajouterStyle();
-        this.drop = new Drop(203, 215);
+        this.drop = new Drop(202, 216);
         this.app.appendChild(this.drop.creerDiv());
     }
 

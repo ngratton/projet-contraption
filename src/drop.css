@@ -4,14 +4,15 @@
 	background-image: url(../img/drop.png);
 	background-repeat: no-repeat;
     position: absolute;
-    animation-name: grow;
-    animation-iteration-count: infinite;
-	animation-timing-function: cubic-bezier(.63,.05,.43,1.7);
+	animation-name: grow;
+	animation-duration: 250ms;
+    animation-iteration-count: 1;
+	animation-timing-function: ease-in;
 }
 
 @keyframes grow {
 	0% {
-		transform: scale(0);
+		transform: scale(0.1);
 	}
 	100% {        
 		transform: scale(1);
