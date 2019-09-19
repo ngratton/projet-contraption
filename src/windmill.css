@@ -5,11 +5,11 @@
 	background-repeat: no-repeat;
 	position: absolute;
 	animation-name: vent;
-	animation-duration: 50ms;
-    animation-iteration-count: 1;
+	animation-duration: 500ms;
+    animation-iteration-count: infinite;
 	animation-timing-function: linear;
 	animation-timing-function: steps(4);
-	animation-play-state: running;
+	animation-play-state: paused;
 }
 
 @keyframes vent {
@@ -17,8 +17,6 @@
 		background-position-x: 0px;
 	}
 	100% {
-		background-position-x: -246px;
-		transform: scaleX(-1);
-		
+		background-position-x: -184px;		
 	}
 }

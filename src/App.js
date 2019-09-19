@@ -13,6 +13,7 @@ import Pipes from "./Pipes.js";
 import Bucket from "./Bucket.js";
 import Drop from "./Drop.js";
 import Splash from "./Splash.js";
+import Windmill from "./Windmill.js";
 
 /**
  * @module App
@@ -22,6 +23,7 @@ export default class App {
 	 * Méthode principale. Sera typiquement appelée après le chargement de la page.
 	 */
 	static main() {
+		Splash.main();
 		Controles.main();
 		Mobilier.main();
 		Chat.main();
@@ -32,8 +34,7 @@ export default class App {
 		Pipes.main();
 		Bucket.main();
 		Drop.main();
-		Splash.main();
-				
+		Windmill.main();				
 	}
 	/**
 	 * Méthode qui permet d'attendre le chargement de la page avant d'éxécuter le script principal

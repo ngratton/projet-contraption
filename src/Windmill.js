@@ -3,7 +3,7 @@
 /**
  * @module Windmill
  */
-export default class Seesaw {
+export default class Windmill {
     constructor(x, y) {
         this.x = x;
         this.y = y;
@@ -14,16 +14,48 @@ export default class Seesaw {
     static main() {
         this.app = document.querySelector("#app");
         this.ajouterStyle();
-        this.windmill = new Windmill(360, 408);
+        this.windmill = new Windmill(460, 114);
         this.app.appendChild(this.windmill.creerDiv());
     }
 
     static startAnimation() {
-            this.windmill.div.style.animationPlayState = "running";
-            this.windmill.div.addEventListener("animationend", (e) => {
-                this.windmill.div.style.removeProperty("animation-play-state");
-                this.windmill.div.style.transform = "scaleX(1)";
-            });
+        this.windmill.div.style.animationPlayState = "running";
+        this.listenKey();
+
+        var moulinVitesse = ["1: Lent","2: Moyen","3: Rapide","0: Arrêt"]
+        var instructions = document.createElement("p");
+        instructions.innerHTML = "Contrôler le moulin avec les touches :";
+        instructions.style.position = "absolute";
+        instructions.style.top = "50px";
+        instructions.style.left = "550px";
+        this.app.appendChild(instructions);
+        
+        var ul = document.createElement("ul");
+        moulinVitesse.forEach(vitesse => {
+            var li = document.createElement("li");
+            li.innerHTML = vitesse;
+            ul.appendChild(li);
+        });
+        instructions.appendChild(ul);
+        instructions.style.border = "1px solid black";
+        instructions.style.padding = "5px";
+    }
+
+    static listenKey() {
+        window.addEventListener("keydown", (e) => {
+            if (e.key === "1") {
+                this.windmill.div.style.animationPlayState = "running"
+                this.windmill.div.style.animationDuration = "500ms";
+            } else if (e.key === "2") {
+                this.windmill.div.style.animationPlayState = "running"
+                this.windmill.div.style.animationDuration = "250ms";
+            } else if (e.key === "3") {
+                this.windmill.div.style.animationPlayState = "runni2ng"
+                this.windmill.div.style.animationDuration = "100ms";
+            } else if (e.key === "0") {
+                this.windmill.div.style.animationPlayState = "paused";
+            }
+        });
     }
     
     static ajouterStyle() {

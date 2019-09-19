@@ -15,11 +15,11 @@ export default class Splash {
         this.app = document.querySelector("#app");
         this.ajouterStyle();;
         document.body.appendChild(this.retournerBackdrop());
-        window.addEventListener("keydown", removeSplash);
-        function removeSplash() {
+        var me;
+        window.addEventListener("keydown", me = e => {
             this.splash.parentNode.removeChild(this.splash);
-            window.removeEventListener("keydown", removeSplash);
-        }
+            window.removeEventListener("keydown", me);
+        });
     }
     
     static ajouterStyle() {
@@ -41,7 +41,5 @@ export default class Splash {
         figcaption.innerHTML = "Appuyez sur n'importe quel touche (clavier) pour continuer.";
         figure.appendChild(figcaption);
         return this.splash;
-}
-
-
+    }
 }

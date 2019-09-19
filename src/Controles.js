@@ -5,6 +5,7 @@
 
 import Chat from "./Chat.js";
 import Drop from "./Drop.js";
+import Windmill from "./Windmill.js";
 
 /**
  * @module Controles
@@ -23,14 +24,16 @@ export default class Controles {
         var controles = new Controles(25, 120);
         var play = this.app.appendChild(controles.creerDiv());
         // console.log(controles.creerDiv());
-		play.addEventListener("click", oneTimeStart);
-		function oneTimeStart() {
+        var me;
+		play.addEventListener("click", me = () => {
             Chat.startAnimation();
             Drop.startAnimation();
-			play.removeEventListener("click", oneTimeStart);
-        }
+            Windmill.startAnimation();
+			play.removeEventListener("click", me);
+        });
+            
         var instructions = document.createElement("p");
-        instructions.innerHTML = "Appuyez sur > pour démarrer l'animation.";
+        instructions.innerHTML = "Appuyez sur le bouton vert pour démarrer l'animation.";
         instructions.style.position = "absolute";
         instructions.style.top = "50px";
         instructions.style.left = "15px";

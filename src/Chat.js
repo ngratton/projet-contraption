@@ -21,7 +21,16 @@ export default class Chat {
     }
 
     static startAnimation() {
-        this.chat.deplacer(273, 100);
+        this.chat.deplacer(273, 100, "right");
+        this.chat.div.style.animationName = "walkright";
+        var me;
+        this.chat.div.addEventListener("transitionend", me = e => {
+            Quille.startAnimation();
+            this.chat.div.removeEventListener("transitionend", me);
+        });
+        setTimeout(() =>{
+            this.wanderingCat("left");
+        }, 1000);
     }
 
     static startledCat() {
@@ -29,6 +38,20 @@ export default class Chat {
         this.chat.div.addEventListener("animationend", (e) => {
             this.chat.div.classList.remove("startled");
         });
+    }
+
+    static wanderingCat(direction) {
+        if (direction === "left") {
+            setTimeout(() => {
+                this.chat.deplacer(100, 100, "left");
+                this.wanderingCat("right");
+            }, 3500);
+        } else if (direction === "right") {
+            setTimeout(() => {
+                this.chat.deplacer(273, 100, "right");
+                this.wanderingCat("left");
+            }, 3500);
+        }
     }
 
     static ajouterStyle() {
@@ -49,27 +72,26 @@ export default class Chat {
     }
 
 
-    deplacer(x, y) {
+    deplacer(x, y, direction) {
         this.x = x;
         this.y = y;
         setTimeout(() => {
+            this.div.style.animationName = "walk" + direction;
             this.div.style.transitionDuration = 2000 + "ms";
             this.div.style.transitionTimingFunction = "linear";
-            this.div.style.animationName = "walk";
             this.div.style.animationDuration = 500 + "ms";
             this.div.style.left = this.x + "px";
             this.div.style.top = this.y + "px";
         }, 10);
-        var stop = (e) => {
+        var me;
+        this.div.addEventListener("transitionend", me = () => {
             this.div.style.removeProperty("transition-duration");
             this.div.style.removeProperty("transition-timing-function");
             this.div.style.removeProperty("animation-name");
             this.div.style.removeProperty("animation-duration");
             this.div.style.removeProperty("transform");
-            this.div.removeEventListener("transitionend", stop);
-            Quille.startAnimation();
-        }
-        this.div.addEventListener("transitionend", stop);
+            this.div.removeEventListener("transitionend", me);
+        });
     }
     
 }
