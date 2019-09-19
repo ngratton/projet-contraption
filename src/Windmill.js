@@ -50,7 +50,7 @@ export default class Windmill {
                 this.windmill.div.style.animationPlayState = "running"
                 this.windmill.div.style.animationDuration = "250ms";
             } else if (e.key === "3") {
-                this.windmill.div.style.animationPlayState = "runni2ng"
+                this.windmill.div.style.animationPlayState = "running"
                 this.windmill.div.style.animationDuration = "100ms";
             } else if (e.key === "0") {
                 this.windmill.div.style.animationPlayState = "paused";
