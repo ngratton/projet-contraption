@@ -1,7 +1,6 @@
 /*jslint esnext:true, browser:true*/
 
 import Chat from "./Chat.js";
-import Clou from "./Clou.js";
 
 /**
  * @module Ballon
